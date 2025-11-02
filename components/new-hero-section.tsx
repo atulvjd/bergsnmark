@@ -6,6 +6,47 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 
 export default function NewHeroSection() {
+  const visualContent = (
+    <div className="space-y-4">
+      {/* Main image */}
+      <motion.div whileHover={{ scale: 1.02 }} className="relative h-56 sm:h-64 rounded-lg overflow-hidden">
+        <Image
+          src="/professional-team-working-on-laptop-in-modern-offi.jpg"
+          alt="Team working"
+          fill
+          className="object-cover"
+          sizes="(min-width: 768px) 480px, 100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      </motion.div>
+
+      {/* Floating stat cards */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
+          <p className="text-xs text-foreground/60 font-semibold mb-1">Instagram Growth</p>
+          <p className="text-3xl font-black text-foreground">300%</p>
+          <p className="text-xs text-foreground/50">Average for clients</p>
+        </motion.div>
+
+        <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
+          <p className="text-xs text-foreground/60 font-semibold mb-1">Conversion Rate</p>
+          <p className="text-3xl font-black text-foreground">6.2%</p>
+          <p className="text-xs text-foreground/50">Industry average: 2%</p>
+        </motion.div>
+      </div>
+
+      {/* Feature highlight */}
+      <motion.div whileHover={{ scale: 1.02 }} className="bg-accent/10 border border-accent/20 p-6 rounded-lg">
+        <p className="text-sm font-semibold text-accent mb-2">Why Clients Choose Us</p>
+        <ul className="text-sm text-foreground/70 space-y-2">
+          <li>✓ Complete digital solution, one partner</li>
+          <li>✓ Proven track record with measurable results</li>
+          <li>✓ Transparent reporting & communication</li>
+        </ul>
+      </motion.div>
+    </div>
+  )
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
       <div className="absolute inset-0 pattern-dots opacity-10" />
@@ -66,18 +107,18 @@ export default function NewHeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="grid grid-cols-3 gap-6"
+              className="grid gap-6 sm:grid-cols-3"
             >
-              <div className="text-center">
-                <div className="text-4xl font-black text-accent mb-2">50+</div>
+              <div className="text-left sm:text-center">
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">50+</div>
                 <p className="text-sm font-medium text-foreground/70">Brands Transformed</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-black text-accent mb-2">$20M+</div>
+              <div className="text-left sm:text-center">
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">$20M+</div>
                 <p className="text-sm font-medium text-foreground/70">Revenue Generated</p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-black text-accent mb-2">98%</div>
+              <div className="text-left sm:text-center">
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">98%</div>
                 <p className="text-sm font-medium text-foreground/70">Client Retention</p>
               </div>
             </motion.div>
@@ -90,40 +131,19 @@ export default function NewHeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="relative hidden md:block"
           >
-            <div className="space-y-4">
-              {/* Main image */}
-              <motion.div whileHover={{ scale: 1.02 }} className="relative h-64 rounded-lg overflow-hidden">
-                <Image src="/professional-team-working-on-laptop-in-modern-offi.jpg" alt="Team working" fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </motion.div>
-
-              {/* Floating stat cards */}
-              <div className="grid grid-cols-2 gap-4">
-                <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
-                  <p className="text-xs text-foreground/60 font-semibold mb-1">Instagram Growth</p>
-                  <p className="text-3xl font-black text-foreground">300%</p>
-                  <p className="text-xs text-foreground/50">Average for clients</p>
-                </motion.div>
-
-                <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
-                  <p className="text-xs text-foreground/60 font-semibold mb-1">Conversion Rate</p>
-                  <p className="text-3xl font-black text-foreground">6.2%</p>
-                  <p className="text-xs text-foreground/50">Industry average: 2%</p>
-                </motion.div>
-              </div>
-
-              {/* Feature highlight */}
-              <motion.div whileHover={{ scale: 1.02 }} className="bg-accent/10 border border-accent/20 p-6 rounded-lg">
-                <p className="text-sm font-semibold text-accent mb-2">Why Clients Choose Us</p>
-                <ul className="text-sm text-foreground/70 space-y-2">
-                  <li>✓ Complete digital solution, one partner</li>
-                  <li>✓ Proven track record with measurable results</li>
-                  <li>✓ Transparent reporting & communication</li>
-                </ul>
-              </motion.div>
-            </div>
+            {visualContent}
           </motion.div>
         </div>
+
+        {/* Mobile visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="relative mt-12 md:hidden"
+        >
+          {visualContent}
+        </motion.div>
       </div>
     </section>
   )

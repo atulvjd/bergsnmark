@@ -28,10 +28,12 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.5 }}
-        className="grid md:grid-cols-2 gap-12 items-center"
+        className="grid gap-10 lg:gap-16 md:grid-cols-2 items-center"
       >
         <div>
-          <h3 className="text-4xl font-bold mb-6 text-foreground">{services[current].title}</h3>
+          <h3 className="text-3xl sm:text-4xl font-bold mb-6 text-foreground text-balance">
+            {services[current].title}
+          </h3>
           <p className="text-lg text-foreground/70 mb-8 leading-relaxed">{services[current].description}</p>
           <div className="space-y-3 mb-8">
             {services[current].features.map((feature, i) => (
@@ -42,7 +44,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
             ))}
           </div>
         </div>
-        <div className="relative h-96 rounded-lg overflow-hidden">
+        <div className="relative aspect-[4/3] md:aspect-[16/10] w-full rounded-lg overflow-hidden">
           <Image
             src={services[current].image || "/placeholder.svg"}
             alt={services[current].title}
@@ -54,7 +56,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
       </motion.div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between mt-12">
+      <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between mt-12">
         <button
           onClick={prev}
           className="bg-primary/80 hover:bg-primary text-primary-foreground rounded-full p-3 transition-all"
@@ -62,7 +64,7 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
         >
           <ChevronLeft size={24} />
         </button>
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           {services.map((_, index) => (
             <button
               key={index}

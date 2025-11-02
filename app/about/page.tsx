@@ -6,8 +6,8 @@ import Image from "next/image"
 export default function AboutPage() {
   return (
     <main className="pt-20">
-<section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div>
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
+        <div className="max-w-5xl mx-auto text-center">
           <FadeInSection>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">Our Story</h1>
             <p className="text-lg sm:text-xl text-balance opacity-90">
@@ -19,11 +19,11 @@ export default function AboutPage() {
 
       {/* Mission with image */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 pattern-subtle-grid">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid gap-12 lg:gap-16 md:grid-cols-2 items-center">
               <div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">Our Mission</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-balance">Our Mission</h2>
                 <p className="text-lg text-muted-foreground mb-6">
                   We exist to help ambitious brands build unstoppable online presence. Not to add clutter to the market,
                   but to create clarity, strategic positioning, and sustainable growth through integrated digital
@@ -34,7 +34,7 @@ export default function AboutPage() {
                   campaign we execute demonstrates that integrated, expert marketing delivers exponential growth.
                 </p>
               </div>
-              <div className="relative h-80 rounded-lg overflow-hidden">
+              <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
                 <Image
                   src="/professional-team-working-on-laptop-in-modern-offi.jpg"
                   alt="Our team working together"
@@ -49,12 +49,12 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16">Our Core Values</h2>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-10 md:grid-cols-2">
             {[
               {
                 title: "Strategy Over Aesthetics",
@@ -93,11 +93,11 @@ export default function AboutPage() {
       </section>
 
       <section className="py-24 px-4 sm:px-6 lg:px-8 pattern-minimal-dots">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16">The Team</h2>
             <div className="space-y-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="grid gap-10 md:grid-cols-2 items-center">
                 <div>
                   <h3 className="text-3xl font-bold mb-4">Expert Leadership</h3>
                   <p className="text-lg text-muted-foreground mb-4">
@@ -110,7 +110,7 @@ export default function AboutPage() {
                     marketing.
                   </p>
                 </div>
-                <div className="relative h-80 rounded-lg overflow-hidden">
+                <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/team-collaboration-meeting-professional-environmen.jpg"
                     alt="Team collaboration"
@@ -120,8 +120,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-80 rounded-lg overflow-hidden order-2 md:order-1">
+              <div className="grid gap-10 md:grid-cols-2 items-center">
+                <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden order-2 md:order-1">
                   <Image
                     src="/social-media-content-creation-team.jpg"
                     alt="Content creation team"
@@ -157,9 +157,9 @@ export default function AboutPage() {
 
       {/* Stats */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { stat: "50+", label: "Brands Transformed" },
                 { stat: "15+", label: "Years Combined Experience" },
@@ -177,11 +177,13 @@ export default function AboutPage() {
       </section>
 
       {/* Team Members Section */}
-<section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div>
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <FadeInSection>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 text-center text-balance">Leadership Team</h2>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid gap-10 md:grid-cols-3">
             {[
               {
                 name: "Sarah Berg",
@@ -204,7 +206,7 @@ export default function AboutPage() {
             ].map((member, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
                 <div className="text-center">
-                  <div className="relative h-64 mb-6 rounded-lg overflow-hidden">
+                  <div className="relative aspect-square mb-6 rounded-lg overflow-hidden">
                     <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
@@ -219,12 +221,12 @@ export default function AboutPage() {
 
       {/* Testimonials Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16">What Our Clients Say</h2>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-10 md:grid-cols-2">
             {[
               {
                 quote:
@@ -288,7 +290,7 @@ export default function AboutPage() {
 
       {/* Why Work With Us */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 text-balance">Why Work With Us</h2>
           </FadeInSection>
@@ -329,7 +331,7 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Let's build something remarkable.</h2>
             <p className="text-lg sm:text-xl mb-8 opacity-90">

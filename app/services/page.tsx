@@ -107,7 +107,7 @@ export default function ServicesPage() {
     <main className="pt-20">
       {/* Services Hero */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div>
+        <div className="max-w-5xl mx-auto text-center">
           <FadeInSection>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">Services Built for Growth</h1>
             <p className="text-lg sm:text-xl text-balance opacity-90">
@@ -120,13 +120,16 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 pattern-subtle-grid">
-        <div>
+        <div className="max-w-6xl mx-auto">
           {services.map((service, index) => (
             <FadeInSection key={service.id} delay={index * 0.1}>
-              <div id={service.id} className={`${service.color} rounded-lg p-6 md:p-8 lg:p-12 mb-12 border border-border`}>
-                <div className="grid md:grid-cols-2 gap-12 items-start">
-                  <div>
-                    <div className="relative h-64 rounded-lg overflow-hidden mb-8">
+              <div
+                id={service.id}
+                className={`${service.color} rounded-lg p-6 md:p-8 lg:p-12 mb-12 border border-border`}
+              >
+                <div className="grid gap-10 lg:gap-16 md:grid-cols-2 items-start">
+                  <div className="flex flex-col">
+                    <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-8">
                       <Image
                         src={service.image || "/placeholder.svg?height=256&width=400"}
                         alt={service.title}
@@ -162,7 +165,7 @@ export default function ServicesPage() {
 
       {/* Pricing Philosophy */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div>
+        <div className="max-w-5xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-balance">Pricing Philosophy</h2>
             <div className="space-y-6 text-lg">
@@ -182,7 +185,7 @@ export default function ServicesPage() {
 
       {/* Process Section */}
       <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-balance">How We Work</h2>
           </FadeInSection>
@@ -211,13 +214,15 @@ export default function ServicesPage() {
               },
             ].map((item, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
-                <div className="grid md:grid-cols-2 gap-8 items-center pb-12 border-b border-border">
+                <div className="grid gap-8 md:grid-cols-2 items-center pb-12 border-b border-border">
                   <div>
                     <div className="text-4xl sm:text-5xl font-bold text-muted-foreground mb-4">{item.step}</div>
                     <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
                     <p className="text-lg text-muted-foreground">{item.desc}</p>
                   </div>
-                  <div className="h-64 bg-gradient-to-br from-background to-secondary rounded-lg"></div>
+                  <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-background to-secondary" />
+                  </div>
                 </div>
               </FadeInSection>
             ))}
@@ -227,7 +232,7 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <FadeInSection>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance">Ready to transform your brand?</h2>
             <p className="text-lg sm:text-xl mb-8 opacity-90">Let's discuss which services align with your goals and timeline.</p>

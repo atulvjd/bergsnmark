@@ -18,15 +18,15 @@ export function ClientLogosCarousel() {
   const duplicatedLogos = [...clientLogos, ...clientLogos]
 
   return (
-    <div className="relative w-full overflow-hidden py-12">
-      <div className="flex gap-12">
+    <div className="relative w-full overflow-hidden py-8 sm:py-12">
+      <div className="flex gap-8 md:gap-12">
         <motion.div
-          className="flex gap-12 min-w-max"
-          animate={{ x: [0, -1000] }}
+          className="flex gap-8 md:gap-12 min-w-max"
+          animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 40, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
         >
           {duplicatedLogos.map((logo, index) => (
-            <div key={index} className="flex items-center justify-center h-20 min-w-[160px]">
+            <div key={index} className="flex items-center justify-center h-16 sm:h-20 min-w-[120px] sm:min-w-[160px]">
               <Image
                 src={logo.url || "/placeholder.svg"}
                 alt={logo.name}

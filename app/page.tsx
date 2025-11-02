@@ -13,7 +13,7 @@ export default function Home() {
 
       {/* Client Logos Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary border-t border-b border-border">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h3 className="text-center text-sm font-semibold text-foreground/60 uppercase tracking-widest mb-12">
               Trusted by Leading Brands
@@ -23,14 +23,14 @@ export default function Home() {
         </div>
       </section>
 
-<section className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
-        <div>
+<section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <div className="mb-20">
               <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
                 What We Do
               </span>
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-8 leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-8 leading-tight text-balance">
                 Complete Digital Growth Solutions
               </h2>
               <p className="text-lg sm:text-xl text-foreground/70 max-w-3xl leading-relaxed">
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
+          <div className="grid gap-10 lg:gap-12 md:grid-cols-2 mb-16">
             {[
               {
                 title: "Website Design & Development",
@@ -100,8 +100,8 @@ export default function Home() {
               },
             ].map((service, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
-                <div className="bg-card border border-border/50 p-6 md:p-8 lg:p-12 rounded-lg hover:border-accent/50 transition-colors group">
-                  <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                <div className="bg-card border border-border/50 p-6 md:p-8 lg:p-10 rounded-lg hover:border-accent/50 transition-colors group h-full flex flex-col">
+                  <div className="relative h-48 sm:h-56 mb-6 rounded-lg overflow-hidden">
                     <Image
                       src={service.image || "/placeholder.svg"}
                       alt={service.title}
@@ -127,8 +127,8 @@ export default function Home() {
       </section>
 
       {/* Services Deep Dive Carousel */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div>
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-20 leading-tight">Explore What We Offer</h2>
           </FadeInSection>
@@ -198,12 +198,14 @@ export default function Home() {
 
       {/* The Market Reality */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <span className="inline-block px-4 py-2 bg-white/10 text-primary-foreground rounded-full text-sm font-semibold mb-6">
               The Reality
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-12 leading-tight">Why Most Businesses Fail Online</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-12 leading-tight text-balance">
+              Why Most Businesses Fail Online
+            </h2>
 
             <div className="space-y-10 text-lg leading-relaxed">
               <div>
@@ -244,8 +246,8 @@ export default function Home() {
         </div>
       </section>
 
-<section className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
-        <div>
+      <section className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
               Our Advantage
@@ -255,7 +257,7 @@ export default function Home() {
             </h2>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Integrated Approach",
@@ -301,15 +303,17 @@ export default function Home() {
 
       {/* Case Studies */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-secondary">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
               Results
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-20 leading-tight">Client Success Stories</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-20 leading-tight text-balance">
+              Client Success Stories
+            </h2>
           </FadeInSection>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid gap-10 lg:gap-12 md:grid-cols-2">
             {[
               {
                 name: "E-Commerce Startup",
@@ -349,7 +353,7 @@ export default function Home() {
             ].map((study, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
                 <div className="bg-card border border-border/50 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
                       src={study.image || "/placeholder.svg"}
                       alt={study.name}
@@ -396,12 +400,14 @@ export default function Home() {
 
       {/* Process Section */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-background">
-        <div>
+        <div className="max-w-6xl mx-auto">
           <FadeInSection>
             <span className="inline-block px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-semibold mb-6">
               Process
             </span>
-            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-20 leading-tight">How We Work Together</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-foreground mb-20 leading-tight text-balance">
+              How We Work Together
+            </h2>
           </FadeInSection>
 
           <div className="space-y-16">
@@ -457,7 +463,7 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-primary text-primary-foreground">
-        <div className="text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <FadeInSection>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-black mb-8 leading-tight">Ready to Grow?</h2>
             <p className="text-lg sm:text-xl text-primary-foreground/80 mb-12 leading-relaxed">
