@@ -41,17 +41,17 @@ export default function ContactPage() {
 
                 <div>
                   <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-3">Phone</h3>
-                  <a href="tel:+15551234567" className="text-2xl font-bold hover:text-primary transition-colors">
-                    +1 (555) 123-4567
+                  <a href="tel:+91 9301703738" className="text-2xl font-bold hover:text-primary transition-colors">
+                    +91 93017 03738
                   </a>
                 </div>
 
                 <div>
                   <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-3">Office</h3>
                   <p className="text-lg">
-                    San Francisco, CA
+                    Bengaluru, Karnataka
                     <br />
-                    New York, NY
+                    India, IN
                   </p>
                 </div>
 
@@ -59,17 +59,17 @@ export default function ContactPage() {
                   <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-3">Social</h3>
                   <ul className="space-y-2">
                     <li>
-                      <a href="#" className="text-lg hover:text-primary transition-colors">
+                      <a href="https://www.linkedin.com/company/bergsnmark/about/?viewAsMember=true" className="text-lg hover:text-primary transition-colors">
                         LinkedIn
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-lg hover:text-primary transition-colors">
+                      <a href="https://www.instagram.com/atulwn/" className="text-lg hover:text-primary transition-colors">
                         Instagram
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-lg hover:text-primary transition-colors">
+                      <a href="https://x.com/atulvjd" className="text-lg hover:text-primary transition-colors">
                         Twitter
                       </a>
                     </li>
@@ -132,10 +132,10 @@ export default function ContactPage() {
           {/* Trust Badges */}
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4 text-center">
             {[
-              { stat: "50+", label: "Brands Transformed" },
-              { stat: "98%", label: "Client Retention" },
-              { stat: "300%", label: "Avg Growth" },
-              { stat: "$20M+", label: "Revenue Generated" },
+              { stat: "7+", label: "Brands Transformed" },
+              { stat: "65%", label: "Client Retention" },
+              { stat: "110%", label: "Avg Growth" },
+              { stat: "$7k+", label: "Revenue Generated" },
             ].map((badge, idx) => (
               <FadeInSection key={idx} delay={idx * 0.1}>
                 <div className="bg-card border border-border/50 p-8 rounded-lg">
