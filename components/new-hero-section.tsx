@@ -110,15 +110,15 @@ export default function NewHeroSection() {
               className="grid gap-6 sm:grid-cols-3"
             >
               <div className="text-left sm:text-center">
-                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">50+</div>
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">10+</div>
                 <p className="text-sm font-medium text-foreground/70">Brands Transformed</p>
               </div>
               <div className="text-left sm:text-center">
-                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">$20M+</div>
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">$7K+</div>
                 <p className="text-sm font-medium text-foreground/70">Revenue Generated</p>
               </div>
               <div className="text-left sm:text-center">
-                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">98%</div>
+                <div className="text-3xl sm:text-4xl font-black text-accent mb-2">65%</div>
                 <p className="text-sm font-medium text-foreground/70">Client Retention</p>
               </div>
             </motion.div>
