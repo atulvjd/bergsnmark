@@ -56,17 +56,17 @@ export default function Footer() {
             <h3 className="font-bold text-sm mb-4">Social</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:opacity-75">
+                <a href="https://linkedin.com/company/bergsnmark" className="hover:opacity-75">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:opacity-75">
+                <a href="https://instagram.com/atulwn" className="hover:opacity-75">
                   Instagram
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:opacity-75">
+                <a href="https://x.com/atulvjd" className="hover:opacity-75">
                   Twitter
                 </a>
               </li>
@@ -74,12 +74,12 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-bold text-sm mb-4">Contact</h3>
-            <p className="text-sm">hello@bergsmark.com</p>
-            <p className="text-sm">+1 (555) 123-4567</p>
+            <p className="text-sm">bergsnco@gmail.com</p>
+            <p className="text-sm">+91 9301703738</p>
           </div>
         </div>
         <div className="border-t border-primary-foreground/20 pt-8 text-sm text-center">
-          <p>&copy; 2025 Bergs & Mark. All rights reserved.</p>
+          <p>&copy; 2023 Bergs & Mark. All rights reserved.</p>
         </div>
       </div>
     </footer>
