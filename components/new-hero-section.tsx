@@ -24,13 +24,13 @@ export default function NewHeroSection() {
       <div className="grid gap-4 sm:grid-cols-2">
         <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
           <p className="text-xs text-foreground/60 font-semibold mb-1">Instagram Growth</p>
-          <p className="text-3xl font-black text-foreground">300%</p>
+          <p className="text-3xl font-black text-foreground">175%</p>
           <p className="text-xs text-foreground/50">Average for clients</p>
         </motion.div>
 
         <motion.div whileHover={{ y: -5 }} className="bg-white/95 backdrop-blur-sm p-5 rounded-lg shadow-lg">
           <p className="text-xs text-foreground/60 font-semibold mb-1">Conversion Rate</p>
-          <p className="text-3xl font-black text-foreground">6.2%</p>
+          <p className="text-3xl font-black text-foreground">3.9%</p>
           <p className="text-xs text-foreground/50">Industry average: 2%</p>
         </motion.div>
       </div>
