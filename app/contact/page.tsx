@@ -32,7 +32,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-sm font-bold text-muted-foreground uppercase tracking-wide mb-3">Email</h3>
                   <a
-                    href="mailto:hello@bergsmark.com"
+                    href="mailto:bergsnco@gmail.com"
                     className="text-2xl font-bold hover:text-primary transition-colors"
                   >
                     bergsnco@gmail.com
