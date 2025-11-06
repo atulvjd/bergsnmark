@@ -167,6 +167,12 @@ export default function AboutPage() {
                 bio: "2+ years in digital marketing And Search Engine Optimization.",
                 image: "",
               },
+              {
+                name: "Vivaan Monga",
+                title: "Unpaid Intern, DevOps",
+                bio: "7+ years in DevOps and Founder Of Karmaa Count",
+                image: "",
+              },
             
             ].map((member, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
