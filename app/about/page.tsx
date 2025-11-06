@@ -169,7 +169,7 @@ export default function AboutPage() {
               },
               {
                 name: "Vivaan Monga",
-                title: "Unpaid Intern, DevOps",
+                title: "Exclusive Mentor, DevOps",
                 bio: "7+ years in DevOps and Founder Of Karmaa Count",
                 image: "",
               },
