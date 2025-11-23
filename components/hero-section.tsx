@@ -31,10 +31,11 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/modern-agency-workspace-team.jpg"
-          alt="Agency workspace"
+          alt="Bergs & Mark marketing agency workspace in India"
           fill
           className="object-cover opacity-10"
           priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background to-background/95"></div>
       </div>

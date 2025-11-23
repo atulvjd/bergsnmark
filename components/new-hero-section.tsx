@@ -12,10 +12,11 @@ export default function NewHeroSection() {
       <motion.div whileHover={{ scale: 1.02 }} className="relative h-56 sm:h-64 rounded-lg overflow-hidden">
         <Image
           src="/professional-team-working-on-laptop-in-modern-offi.jpg"
-          alt="Team working"
+          alt="Bergs & Mark digital marketing team building online presence strategies"
           fill
           className="object-cover"
-          sizes="(min-width: 768px) 480px, 100vw"
+          sizes="(min-width: 1024px) 640px, (min-width: 768px) 480px, 100vw"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </motion.div>

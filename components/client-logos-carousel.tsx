@@ -29,10 +29,12 @@ export function ClientLogosCarousel() {
             <div key={index} className="flex items-center justify-center h-16 sm:h-20 min-w-[120px] sm:min-w-[160px]">
               <Image
                 src={logo.url || "/placeholder.svg"}
-                alt={logo.name}
+                alt={`${logo.name} partnership with Bergs & Mark`}
                 width={140}
                 height={60}
                 className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                loading="lazy"
+                sizes="140px"
               />
             </div>
           ))}

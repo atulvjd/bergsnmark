@@ -2,13 +2,37 @@ import { FadeInSection } from "@/components/motion-wrapper"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import { brandDescription, defaultKeywords, defaultOgImage, siteUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "About Bergs & Mark | Digital Marketing Agency & IT Solutions",
+  title: "About Bergs & Mark | Branding & Marketing Experts in India",
   description:
-    "Learn about Bergs & Mark, a leading digital marketing agency and IT solutions firm. Discover our story, mission, and the values that drive us to deliver exceptional results for our clients. We are a team of experts dedicated to helping businesses grow.",
-  keywords: ["about us", "digital marketing agency", "it solutions firm", "company story", "mission and values", "expert team"],
+    "Meet Bergs & Mark, a digital marketing agency in India delivering SEO services, branding, and performance marketing for ambitious brands.",
+  keywords: [...defaultKeywords, "about Bergs & Mark", "branding experts India", "digital marketing leadership team"],
+  authors: [{ name: "Bergs & Mark", url: siteUrl }],
+  alternates: { canonical: `${siteUrl}/about` },
+  openGraph: {
+    title: "About Bergs & Mark | Online Presence Management Leaders",
+    description: brandDescription,
+    url: `${siteUrl}/about`,
+    siteName: "Bergs & Mark",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Bergs & Mark leadership team building online presence",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Bergs & Mark | Digital Marketing Agency India",
+    description: brandDescription,
+    images: [defaultOgImage],
+  },
 }
 
 export default function AboutPage() {
@@ -36,15 +60,21 @@ export default function AboutPage() {
                   Our mission is to empower ambitious brands to build an unstoppable online presence. We don't just add to the market clutter; we bring clarity, strategic positioning, and sustainable growth through our integrated digital marketing and IT solutions. We are committed to being the best service provider for our clients, delivering not just services, but tangible results.
                 </p>
                 <p className="text-lg text-muted-foreground">
-                  Every brand we partner with becomes a leader in its industry. Every strategy we develop is designed to drive measurable results and a high return on investment. Every campaign we execute demonstrates the power of integrated, expert marketing and IT solutions, leading to exponential growth and long-term success.
+                  Every brand we partner with becomes a leader in its industry. Every strategy we develop is designed to drive measurable results and a high return on investment. Every campaign we execute demonstrates the power of integrated, expert marketing and IT solutions, leading to exponential growth and long-term success.{" "}
+                  <Link href="/services" className="font-semibold text-primary underline underline-offset-4">
+                    Explore our SEO services and performance marketing systems
+                  </Link>{" "}
+                  built for ambitious teams in India.
                 </p>
               </div>
               <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
                 <Image
                   src="/professional-team-working-on-laptop-in-modern-offi.jpg"
-                  alt="Our team working together"
+                  alt="Bergs & Mark digital marketing strategists collaborating in Bengaluru office"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                 />
               </div>
             </div>
@@ -115,9 +145,11 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
                   <Image
                     src="/team-collaboration-meeting-professional-environmen.jpg"
-                    alt="Team collaboration"
+                    alt="Bergs & Mark branding and marketing experts collaborating on strategy"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                   />
                 </div>
               </div>
@@ -179,7 +211,14 @@ export default function AboutPage() {
               <FadeInSection key={index} delay={index * 0.1}>
                 <div className="text-center">
                   <div className="relative aspect-square mb-6 rounded-lg overflow-hidden">
-                    <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
+                    <Image
+                      src={member.image || "/placeholder.svg"}
+                      alt={`${member.name} - ${member.title} at Bergs & Mark`}
+                      fill
+                      className="object-cover"
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 100vw"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
                   <p className="text-accent font-semibold text-sm mb-4">{member.title}</p>
@@ -243,9 +282,11 @@ export default function AboutPage() {
                     <div className="relative w-12 h-12 rounded-full overflow-hidden">
                       <Image
                         src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.author}
+                        alt={`${testimonial.author} testimonial for Bergs & Mark`}
                         fill
                         className="object-cover"
+                        loading="lazy"
+                        sizes="48px"
                       />
                     </div>
                     <div>
