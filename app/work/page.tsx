@@ -2,13 +2,37 @@ import { FadeInSection, ScaleInSection } from "@/components/motion-wrapper"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import { brandDescription, defaultKeywords, defaultOgImage, siteUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Our Work | Digital Marketing Agency & IT Solutions",
+  title: "Case Studies | Bergs & Mark Digital Marketing Results",
   description:
-    "Explore the case studies of Bergs & Mark, a leading digital marketing agency and IT solutions firm. See how we have helped businesses achieve their goals with our innovative strategies and custom solutions.",
-  keywords: ["case studies", "our work", "digital marketing", "it solutions", "success stories", "client results"],
+    "See Bergs & Mark case studies across SaaS, e-commerce, and services. Discover SEO services, branding, and performance marketing wins for clients in India.",
+  keywords: [...defaultKeywords, "digital marketing case studies", "performance marketing results", "SEO success stories"],
+  authors: [{ name: "Bergs & Mark", url: siteUrl }],
+  alternates: { canonical: `${siteUrl}/work` },
+  openGraph: {
+    title: "Case Studies | Bergs & Mark Performance Marketing Agency",
+    description: brandDescription,
+    url: `${siteUrl}/work`,
+    siteName: "Bergs & Mark",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Bergs & Mark marketing case studies and results",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | Bergs & Mark",
+    description: brandDescription,
+    images: [defaultOgImage],
+  },
 }
 
 export default function WorkPage() {
@@ -120,6 +144,12 @@ export default function WorkPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">Our Work</h1>
             <p className="text-lg sm:text-xl text-balance opacity-90">
               Explore our case studies from diverse industries to see how our digital marketing agency and IT solution firm has positioned, built, and scaled ambitious brands to become market leaders. We are the service provider that delivers results.
+              <span className="block mt-4 text-base sm:text-lg">
+                <Link href="/services" className="font-semibold text-primary underline underline-offset-4">
+                  Review our performance marketing and SEO services
+                </Link>{" "}
+                to replicate these outcomes for your brand.
+              </span>
             </p>
           </FadeInSection>
         </div>
@@ -136,9 +166,11 @@ export default function WorkPage() {
                   <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
                     <Image
                       src={study.image || "/placeholder.svg?height=384&width=384"}
-                      alt={study.company}
+                      alt={`${study.company} marketing case study by Bergs & Mark`}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>

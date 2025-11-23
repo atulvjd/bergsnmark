@@ -47,9 +47,11 @@ export function ServiceCarousel({ services }: ServiceCarouselProps) {
         <div className="relative aspect-[4/3] md:aspect-[16/10] w-full rounded-lg overflow-hidden">
           <Image
             src={services[current].image || "/placeholder.svg"}
-            alt={services[current].title}
+            alt={`${services[current].title} by Bergs & Mark performance marketing agency`}
             fill
             className="object-cover"
+            loading="lazy"
+            sizes="(min-width: 1024px) 600px, (min-width: 768px) 50vw, 100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
         </div>

@@ -1,13 +1,37 @@
 import ContactForm from "@/components/contact-form"
 import { FadeInSection } from "@/components/motion-wrapper"
 import Image from "next/image"
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import { brandDescription, defaultKeywords, defaultOgImage, siteUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Contact Bergs & Mark | Digital Marketing Agency & IT Solutions",
+  title: "Contact Bergs & Mark | Speak with a Performance Marketing Agency",
   description:
-    "Contact Bergs & Mark, a leading digital marketing agency and IT solutions firm. Reach out to us for a free consultation and let us help you grow your business. We offer a wide range of services, including SEO, PPC, social media marketing, and more.",
-  keywords: ["contact us", "digital marketing agency", "it solutions firm", "free consultation", "get in touch", "contact information"],
+    "Contact Bergs & Mark for SEO services, branding, and performance marketing support. Get a fast response from our digital marketing agency in India.",
+  keywords: [...defaultKeywords, "contact Bergs & Mark", "speak with marketing experts", "SEO consultation India"],
+  authors: [{ name: "Bergs & Mark", url: siteUrl }],
+  alternates: { canonical: `${siteUrl}/contact` },
+  openGraph: {
+    title: "Contact Bergs & Mark | Performance Marketing Agency India",
+    description: brandDescription,
+    url: `${siteUrl}/contact`,
+    siteName: "Bergs & Mark",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Contact Bergs & Mark digital marketing agency in India",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Bergs & Mark | Digital Marketing Agency India",
+    description: brandDescription,
+    images: [defaultOgImage],
+  },
 }
 
 export default function ContactPage() {
@@ -130,9 +154,11 @@ export default function ContactPage() {
             <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden">
               <Image
                 src="/team-collaboration-meeting-professional-environmen.jpg"
-                alt="Why choose us"
+                alt="Performance marketing experts at Bergs & Mark planning campaigns"
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
               />
             </div>
           </div>

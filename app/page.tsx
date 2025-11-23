@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import NewHeroSection from "@/components/new-hero-section"
 import { ClientLogosCarousel } from "@/components/client-logos-carousel"
 import { ServiceCarousel } from "@/components/service-carousel"
@@ -5,6 +6,33 @@ import { FadeInSection } from "@/components/motion-wrapper"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { brandDescription, defaultKeywords, defaultOgImage, siteUrl } from "@/lib/seo"
+
+export const metadata: Metadata = {
+  title: "Bergs & Mark | Digital Marketing Agency in India for SEO & Branding",
+  description:
+    "Partner with Bergs & Mark, a performance marketing agency in India delivering SEO services, branding, paid ads, and online presence management that converts.",
+  keywords: [...defaultKeywords, "digital growth campaigns", "branding and marketing experts India", "online presence management agency"],
+  authors: [{ name: "Bergs & Mark", url: siteUrl }],
+  alternates: { canonical: `${siteUrl}/` },
+  openGraph: {
+    title: "Bergs & Mark | Performance Marketing Agency that Grows Revenue",
+    description: brandDescription,
+    url: `${siteUrl}/`,
+    siteName: "Bergs & Mark",
+    images: [
+      { url: defaultOgImage, width: 1200, height: 630, alt: "Bergs & Mark performance marketing team in India" },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bergs & Mark | Digital Marketing Agency India",
+    description: brandDescription,
+    images: [defaultOgImage],
+  },
+  category: "marketing",
+}
 
 export default function Home() {
   return (
@@ -19,7 +47,11 @@ export default function Home() {
                 Your Partner in Digital Excellence
               </h2>
               <p className="text-lg sm:text-xl text-foreground/70 max-w-4xl mx-auto leading-relaxed">
-                Bergs & Mark is your one-stop solution for all your digital needs. As a leading digital marketing agency and IT solutions firm, we provide a comprehensive suite of services designed to elevate your brand and accelerate your growth. Whether you're looking for a cutting-edge website, a results-driven marketing campaign, or robust IT infrastructure, our team of experts is here to help. We are more than just a service provider; we are your strategic partner in navigating the digital landscape.
+                Bergs & Mark is your one-stop solution for all your digital needs. As a leading digital marketing agency and IT solutions firm, we provide a comprehensive suite of services designed to elevate your brand and accelerate your growth. Whether you're looking for a cutting-edge website, a results-driven marketing campaign, or robust IT infrastructure, our team of experts is here to help. We are more than just a service provider; we are your strategic partner in navigating the digital landscape.{" "}
+                <Link href="/services" className="font-semibold text-primary underline underline-offset-4">
+                  Explore our performance marketing services in India
+                </Link>{" "}
+                to strengthen your online presence management.
               </p>
             </div>
           </FadeInSection>
@@ -119,9 +151,11 @@ export default function Home() {
                   <div className="relative h-48 sm:h-56 mb-6 rounded-lg overflow-hidden">
                     <Image
                       src={service.image || "/placeholder.svg"}
-                      alt={service.title}
+                      alt={`${service.title} by Bergs & Mark performance marketing agency`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw"
                     />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
@@ -371,9 +405,11 @@ export default function Home() {
                   <div className="relative aspect-[4/3] w-full overflow-hidden">
                     <Image
                       src={study.image || "/placeholder.svg"}
-                      alt={study.name}
+                      alt={`${study.name} digital marketing case study by Bergs & Mark`}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                     />
                   </div>
                   <div className="p-4 md:p-6 lg:p-8">

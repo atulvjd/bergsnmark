@@ -2,13 +2,37 @@ import { FadeInSection } from "@/components/motion-wrapper"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { Metadata } from "next"
+import type { Metadata } from "next"
+import { brandDescription, defaultKeywords, defaultOgImage, siteUrl } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  title: "Our Services | Digital Marketing Agency & IT Solutions",
+  title: "Services | SEO Services, Branding, Performance Marketing by Bergs & Mark",
   description:
-    "Explore the wide range of services offered by Bergs & Mark, a leading digital marketing agency and IT solutions firm. From SEO and PPC to web design and development, we have the expertise to help you achieve your business goals.",
-  keywords: ["services", "digital marketing", "it solutions", "seo", "ppc", "web design", "web development", "social media marketing"],
+    "Discover Bergs & Mark services: SEO services, performance marketing, branding, web design, paid ads, and online presence management tailored for India.",
+  keywords: [...defaultKeywords, "marketing services India", "digital marketing retainers", "SEO campaigns for brands"],
+  authors: [{ name: "Bergs & Mark", url: siteUrl }],
+  alternates: { canonical: `${siteUrl}/services` },
+  openGraph: {
+    title: "Services | Bergs & Mark Performance Marketing Agency",
+    description: brandDescription,
+    url: `${siteUrl}/services`,
+    siteName: "Bergs & Mark",
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "Bergs & Mark marketing services for growth in India",
+      },
+    ],
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Bergs & Mark",
+    description: brandDescription,
+    images: [defaultOgImage],
+  },
 }
 
 export default function ServicesPage() {
@@ -120,6 +144,12 @@ export default function ServicesPage() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">Services Built for Growth</h1>
             <p className="text-lg sm:text-xl text-balance opacity-90">
               As a premier digital marketing agency and IT solution firm, we offer a comprehensive suite of integrated services that work together to build, brand, and grow your business. From stunning websites and strategic Instagram growth to targeted paid ads, captivating video production, creative design, and complete, end-to-end marketing campaigns, we are the service provider that can do it all.
+              <span className="block mt-4 text-base sm:text-lg">
+                <Link href="/contact" className="font-semibold text-secondary underline underline-offset-4">
+                  Talk to our performance marketing agency in India
+                </Link>{" "}
+                for a tailored roadmap that aligns SEO services, branding, and online presence management with your goals.
+              </span>
             </p>
           </FadeInSection>
         </div>
@@ -139,9 +169,11 @@ export default function ServicesPage() {
                     <div className="relative aspect-[4/3] w-full rounded-lg overflow-hidden mb-8">
                       <Image
                         src={service.image || "/placeholder.svg?height=256&width=400"}
-                        alt={service.title}
+                        alt={`${service.title} delivered by Bergs & Mark digital marketing agency in India`}
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                       />
                     </div>
                     <h2 className="text-3xl sm:text-4xl font-bold mb-6">{service.title}</h2>
