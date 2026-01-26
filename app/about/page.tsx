@@ -197,7 +197,7 @@ export default function AboutPage() {
               {
                 name: "Atul Sahu",
                 title: "Founder & Strategy Director",
-                bio: "2+ years in digital marketing And Search Engine Optimization.",
+                bio: "3+ years in digital marketing, SEOs, Business Analyst.",
                 image: "",
               },
               {
@@ -206,6 +206,31 @@ export default function AboutPage() {
                 bio: "7+ years in DevOps and Founder Of Karmaa Count",
                 image: "",
               },
+              {
+                name: "Utsav D",
+                title: "Post-Production Specialist & Analyst",
+                bio: "1+ Year in Video Production and Intern Analyst",
+                image: "",
+              },
+              {
+                name: "Siddharth Mishra",
+                title: "Design & Operations Associate",
+                bio: "1+ Years in Creating Visual Designs",
+                image: "",
+              },
+              {
+                name: "Saurabh Kumar",
+                title: "UI/UX Specialist Intern",
+                bio: "6 months + In Frontend Designs",
+                image: "",
+              },
+              {
+                name: "Sahitya Singh",
+                title: "Marketing Design & Support Specialist",
+                bio: "9 Months + In Creative Designs",
+                image: "",
+              },
+      
             
             ].map((member, index) => (
               <FadeInSection key={index} delay={index * 0.1}>
